@@ -8,25 +8,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity(name = "turma")
 public class Turma implements ModelEntity {
 	
+	private static final long serialVersionUID = 2887732168509166501L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "turma_codigo")
 	@Column(name = "codigo", nullable=false)
 	private Long id;
 	
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "codigo_disciplina")
 	private Disciplina disciplina;
 	
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "codigo_professor")
 	private Pessoa professor;
 	
 	@Temporal(TemporalType.DATE)

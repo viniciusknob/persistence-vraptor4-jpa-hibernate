@@ -24,7 +24,7 @@
         
         <property name="hibernate.hbm2ddl.auto">validate</property>
         
-        <mapping package="br.edu.imed.model" />
+        <mapping package="cc.juris.model" />
         
         <!-- <mapping class="br.edu.imed.model.Customer" /> -->
         

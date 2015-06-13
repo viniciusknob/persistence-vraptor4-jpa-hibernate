@@ -9,6 +9,8 @@ import javax.persistence.Id;
 @Entity(name = "disciplina")
 public class Disciplina implements ModelEntity {
 	
+	private static final long serialVersionUID = 2024170710343601507L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "disciplina_codigo")
 	@Column(name = "codigo", nullable=false)

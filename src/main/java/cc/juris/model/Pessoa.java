@@ -10,11 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
-@Entity(name = "pessoa")
+@Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
 public abstract class Pessoa implements ModelEntity {
 	
+	private static final long serialVersionUID = 1771383181062674595L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "pessoa_codigo")
 	@Column(name = "codigo", nullable=false)
@@ -26,7 +28,6 @@ public abstract class Pessoa implements ModelEntity {
 	private String endereco;
 	private String email;
 	private String senha;
-	private String tipo;
 
 	@Override
 	public Long getId() {
@@ -86,12 +87,4 @@ public abstract class Pessoa implements ModelEntity {
 		this.senha = senha;
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-	
 }

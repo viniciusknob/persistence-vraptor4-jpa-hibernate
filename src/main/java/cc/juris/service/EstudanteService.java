@@ -7,7 +7,8 @@ import cc.juris.model.Estudante;
 
 public class EstudanteService extends AbstractService<Estudante> {
 	
-	@Inject AbstractDao<Estudante> dao;
+	@Inject 
+	AbstractDao<Estudante> dao;
 
 	@Override
 	protected AbstractDao<Estudante> getDao() {

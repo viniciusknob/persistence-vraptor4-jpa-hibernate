@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/test"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="java-output-path" value="/vraptor-template/build/classes"/>
-        <property name="context-root" value="vraptor-template"/>
+        <property name="context-root" value="persistence-vraptor4-jpa-hibernate"/>
     </wb-module>
 </project-modules>

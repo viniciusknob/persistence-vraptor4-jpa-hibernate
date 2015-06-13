@@ -13,11 +13,10 @@ import cc.juris.service.EstudanteService;
 
 @Controller
 @Path("/estudante")
-public class EstudanteController {
+public class EstudanteController implements RepositoryController<Estudante> {
 
 	@Inject Result result;
 	@Inject EstudanteService service;
-	
 	
 	// {"estudante":{"nome":"Vinicius","ddd":"55","telefone":"99887766","endereco":"R.Local,123","email":"a@b.c","senha":"123456"}}
 	@Post("/add")
@@ -25,6 +24,17 @@ public class EstudanteController {
 	public void add(Estudante estudante) {
 		service.add(estudante);
 		result.use(Results.status()).ok();
+	}
+
+	@Override
+	public void remove(Long id) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public Estudante get(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

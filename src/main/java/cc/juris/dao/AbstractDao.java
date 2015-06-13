@@ -76,5 +76,10 @@ public abstract class AbstractDao<T> {
 		session.saveOrUpdate(instance);
 		return instance;
 	}
+	
+	public T delete(T instance) {
+		session.delete(instance);
+		return instance;
+	}
 
 }

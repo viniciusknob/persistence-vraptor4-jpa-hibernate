@@ -15,8 +15,4 @@ public class EstudanteService extends AbstractService<Estudante> {
 		return dao;
 	}
 	
-	public void add(Estudante estudante) {
-		dao.save(estudante);
-	}
-
 }

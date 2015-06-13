@@ -16,6 +16,10 @@ public abstract class AbstractService<T> {
 		return getDao().save(instance);
 	}
 	
+	public T delete(Long id) {
+		return getDao().delete(findById(id));
+	}
+	
 	protected void setDefaultValues(T instance) {
 		// Must be implemented on Concrete Service
 	}
